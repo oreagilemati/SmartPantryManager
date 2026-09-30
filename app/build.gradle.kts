@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.smartpantrymanager"
+    namespace = "com.shashi.smartpantry"
     compileSdk {
         version = release(37)
     }
@@ -35,6 +35,7 @@ dependencies {
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
