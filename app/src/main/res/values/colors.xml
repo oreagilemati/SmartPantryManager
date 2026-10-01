@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#2E7D32</color>
-    <color name="primary_dark">#1B5E20</color>
-    <color name="accent">#F9A825</color>
-    <color name="background">#F5F7F2</color>
+    <!-- Pink and white palette. Change these hex values to restyle the whole app. -->
+    <color name="primary">#D81B60</color>
+    <color name="primary_dark">#AD1457</color>
+    <color name="accent">#EC407A</color>
+    <color name="pink_light">#FCE4EC</color>
+    <color name="pink_border">#F8BBD0</color>
+    <color name="background">#FFFFFF</color>
     <color name="text_primary">#212121</color>
-    <color name="text_secondary">#616161</color>
+    <color name="text_secondary">#6B6B6B</color>
     <color name="expiring_soon">#EF6C00</color>
-    <color name="expired">#C62828</color>
+    <color name="expired">#B71C1C</color>
     <color name="white">#FFFFFF</color>
 </resources>

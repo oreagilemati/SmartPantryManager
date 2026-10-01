@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.shashi.smartpantry.R;
 import com.shashi.smartpantry.db.DatabaseHelper;
+import com.shashi.smartpantry.logic.IngredientEmoji;
 import com.shashi.smartpantry.logic.RecipeMatcher;
 import com.shashi.smartpantry.model.PantryItem;
 import com.shashi.smartpantry.model.Recipe;
@@ -46,6 +47,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             for (RecipeIngredient ing : recipe.getIngredients()) {
                 boolean have = !missing.contains(ing.getName());
                 sb.append(have ? "\u2714  " : "\u2718  ")
+                  .append(IngredientEmoji.forName(ing.getName())).append("  ")
                   .append(Format.qty(ing.getQuantity())).append(' ')
                   .append(ing.getUnit()).append("  ")
                   .append(ing.getName()).append('\n');

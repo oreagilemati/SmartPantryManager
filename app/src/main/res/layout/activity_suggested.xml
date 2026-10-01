@@ -41,10 +41,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@color/accent"
+                android:background="@color/pink_light"
                 android:padding="10dp"
                 android:text="@string/almost_there_header"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/primary_dark"
                 android:textStyle="bold"
                 android:visibility="gone" />
 

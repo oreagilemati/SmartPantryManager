@@ -15,16 +15,16 @@
     <string name="nav_settings">Settings</string>
 
     <!-- Pantry list -->
-    <string name="empty_pantry">Your pantry is empty.\nTap + to add your first ingredient.</string>
+    <string name="empty_pantry">Your pantry\'s looking a bit empty 👀\nTap + and add your first ingredient.</string>
     <string name="add_ingredient">Add ingredient</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
-    <string name="delete_title">Delete ingredient?</string>
+    <string name="delete_title">Bin this ingredient?</string>
     <string name="delete_message">Remove %1$s from your pantry?</string>
-    <string name="item_deleted">Ingredient deleted</string>
-    <string name="item_added">Ingredient added</string>
-    <string name="item_updated">Ingredient updated</string>
+    <string name="item_deleted">Gone! 🗑️</string>
+    <string name="item_added">Added to your pantry ✨</string>
+    <string name="item_updated">Updated, looking good ✨</string>
     <string name="item_not_found">That ingredient no longer exists</string>
     <string name="no_expiry">No expiry date</string>
     <string name="expires_on">Expires: %1$s</string>
@@ -45,10 +45,10 @@
     <string name="error_qty_range">Quantity must be more than 0 and at most 100000</string>
 
     <!-- Recipes -->
-    <string name="no_matches">No recipes match your pantry yet - add more ingredients.</string>
-    <string name="almost_there_header">Almost there (missing 1 ingredient)</string>
+    <string name="no_matches">Nothing\'s cooking just yet 🍳\nAdd a few more ingredients and check back.</string>
+    <string name="almost_there_header">So close! Missing just 1 ingredient</string>
     <string name="missing_one">Missing: %1$s</string>
-    <string name="ingredient_count">%1$d ingredients - you have them all</string>
+    <string name="ingredient_count">%1$d ingredients – you\'ve got them all ✅</string>
     <string name="ingredients">Ingredients</string>
     <string name="method">Method</string>
     <string name="recipe_not_found">Recipe not found</string>

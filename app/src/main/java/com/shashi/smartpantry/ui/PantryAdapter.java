@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shashi.smartpantry.R;
+import com.shashi.smartpantry.logic.IngredientEmoji;
 import com.shashi.smartpantry.model.PantryItem;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.ViewHolder
         final PantryItem item = items.get(position);
         Context ctx = h.itemView.getContext();
 
-        h.name.setText(item.getName());
+        h.name.setText(IngredientEmoji.forName(item.getName()) + "  " + item.getName());
         h.quantity.setText(Format.qty(item.getQuantity()) + " " + item.getUnit());
 
         String expiry = item.getExpiryDate();
