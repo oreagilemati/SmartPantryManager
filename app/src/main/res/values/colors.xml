@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#2E7D32</color>
+    <color name="primary_dark">#1B5E20</color>
+    <color name="accent">#F9A825</color>
+    <color name="background">#F5F7F2</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#616161</color>
+    <color name="expiring_soon">#EF6C00</color>
+    <color name="expired">#C62828</color>
+    <color name="white">#FFFFFF</color>
 </resources>
