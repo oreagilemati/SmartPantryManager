@@ -13,8 +13,12 @@ import com.shashi.smartpantry.R;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
+    private BottomNavigationView nav;
+    private int ownItemId;
+
     protected void setupBottomNav(final int selectedItemId) {
-        BottomNavigationView nav = findViewById(R.id.bottom_nav);
+        ownItemId = selectedItemId;
+        nav = findViewById(R.id.bottom_nav);
         nav.setSelectedItemId(selectedItemId);
         nav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -32,7 +36,20 @@ public abstract class BaseActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
             overridePendingTransition(0, 0);
-            return true;
+            // false = keep THIS screen's own tab highlighted (the other screen highlights itself)
+            return false;
         });
+    }
+
+    /**
+     * A reused screen can come back to the front still showing the tab that was tapped
+     * the last time it was visible, so always re-highlight this screen's own tab.
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (nav != null && nav.getSelectedItemId() != ownItemId) {
+            nav.getMenu().findItem(ownItemId).setChecked(true);
+        }
     }
 }
