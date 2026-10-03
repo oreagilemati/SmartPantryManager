@@ -1,0 +1,32 @@
+digraph ER {
+  rankdir=LR; bgcolor="white"; nodesep=0.7;
+  node [shape=plaintext, fontname="Helvetica", fontsize=11];
+  edge [fontname="Helvetica", fontsize=10];
+  pantry [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#D81B60">
+      <TR><TD BGCOLOR="#D81B60" COLSPAN="2"><FONT COLOR="white"><B>pantry_items</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> _id</TD><TD ALIGN="LEFT">INTEGER (auto)</TD></TR>
+      <TR><TD ALIGN="LEFT">name</TD><TD ALIGN="LEFT">TEXT NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">quantity</TD><TD ALIGN="LEFT">REAL NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">unit</TD><TD ALIGN="LEFT">TEXT NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">expiry_date</TD><TD ALIGN="LEFT">TEXT (yyyy-MM-dd)</TD></TR>
+    </TABLE>>];
+  recipes [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#D81B60">
+      <TR><TD BGCOLOR="#D81B60" COLSPAN="2"><FONT COLOR="white"><B>recipes</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> _id</TD><TD ALIGN="LEFT">INTEGER (auto)</TD></TR>
+      <TR><TD ALIGN="LEFT">name</TD><TD ALIGN="LEFT">TEXT NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">steps</TD><TD ALIGN="LEFT">TEXT NOT NULL</TD></TR>
+    </TABLE>>];
+  ri [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#D81B60">
+      <TR><TD BGCOLOR="#D81B60" COLSPAN="2"><FONT COLOR="white"><B>recipe_ingredients</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> _id</TD><TD ALIGN="LEFT">INTEGER (auto)</TD></TR>
+      <TR><TD ALIGN="LEFT"><B>FK</B> recipe_id</TD><TD ALIGN="LEFT">INTEGER NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">ingredient_name</TD><TD ALIGN="LEFT">TEXT NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">quantity</TD><TD ALIGN="LEFT">REAL NOT NULL</TD></TR>
+      <TR><TD ALIGN="LEFT">unit</TD><TD ALIGN="LEFT">TEXT NOT NULL</TD></TR>
+    </TABLE>>];
+  recipes -> ri [label="1 : many\nON DELETE CASCADE", arrowhead=crow, arrowtail=tee, dir=both];
+  pantry -> ri [style=dashed, color="#9E9E9E", label="compared at run time\nby RecipeMatcher\n(no foreign key)", arrowhead=none];
+}

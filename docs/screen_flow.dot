@@ -1,0 +1,17 @@
+digraph G {
+  rankdir=TB; bgcolor="white"; nodesep=0.6; ranksep=0.9;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12, fillcolor="#FCE4EC", color="#D81B60", margin="0.2,0.12"];
+  edge [fontname="Helvetica", fontsize=10, color="#424242"];
+  Pantry   [label="Pantry List\n(MainActivity)", fillcolor="#F8BBD0"];
+  AddEdit  [label="Add / Edit Ingredient\n(AddEditIngredientActivity)"];
+  Suggested[label="Suggested Recipes\n(SuggestedRecipesActivity)", fillcolor="#F8BBD0"];
+  Detail   [label="Recipe Detail\n(RecipeDetailActivity)"];
+  Settings [label="Settings\n(SettingsActivity)", fillcolor="#F8BBD0"];
+  Pantry -> AddEdit [label="FAB (add)\nor Edit icon + item_id extra"];
+  AddEdit -> Pantry [label="Save / Up (finish)"];
+  Pantry -> Suggested [label="bottom nav", dir=both];
+  Pantry -> Settings [label="bottom nav", dir=both];
+  Suggested -> Settings [label="bottom nav", dir=both];
+  Suggested -> Detail [label="tap recipe +\nrecipe_id extra"];
+  Detail -> Suggested [label="Up (finish)"];
+}
